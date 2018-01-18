@@ -60,19 +60,18 @@
 
     <div class="starter-template">
         <h2>Input Page</h2>
-        <p>Enter some user input</p>
     </div>
 
     <div class = "container">
 
       <form  action="/output" method="GET">
         <div class="form-group">
-          <label for="birth_month">Birth Month:</label>
-          <input type="text" id="birth_month" name='birth_month' placeholder="e.g. ">
+          <label for="birth_month">Search:</label>
+          <input type="query" id="query" name='query' placeholder="How do I... ">
         </div>
 
         <div>
-          <button type="submit" class="btn btn-default btn-lg">Find these Cesareans!</button>
+          <button type="submit" class="btn btn-default btn-lg">Find Related Search Terms:</button>
         </div>
 
       </form>
@@ -95,4 +94,3 @@
   <script src="../static/js/bootstrap.min.js"></script>
   </body>
 </html>
-
