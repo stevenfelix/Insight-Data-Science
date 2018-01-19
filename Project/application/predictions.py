@@ -44,5 +44,5 @@ def predict_similar(query, model, rmv_stop_words=False):
     if l is None:
         return "function did not return results"
     else:
-        return pd.DataFrame(l)
+        return l
     
