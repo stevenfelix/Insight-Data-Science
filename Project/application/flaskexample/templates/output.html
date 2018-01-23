@@ -8,8 +8,7 @@
             <font size="+2">
             {% for suggestion in suggestions %}
             <br>
-            <a href="https://www.google.com/search?client=safari&rls=en&q={{ suggestion }}">
-            {{ suggestion }}</a>
+            <a href="https://stackoverflow.com/search?q={{ suggestion }}" target="_blank">{{ suggestion }}</a>
             {% endfor %}
             </font>
 

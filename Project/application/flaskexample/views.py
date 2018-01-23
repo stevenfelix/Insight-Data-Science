@@ -1,11 +1,10 @@
 from flask import render_template, request
 from flaskexample import app
-import pandas as pd
-from predictions import predict_similar
+from predictions import generate_alternatives
 import gensim
 
 path = "/Users/stevenfelix/Documents/DataScience_local/Insight/"
-file = 'model_full_50M_1_250_5_3'
+file = 'model_full_50M_sg0_sz250_win5_min3_hs1_neg0'
 model = gensim.models.word2vec.Word2Vec.load(path+file)
 
 @app.route('/')
@@ -16,6 +15,6 @@ def query_input():
 @app.route('/output')
 def query_output():
   query = request.args.get('query')
-  suggestions=predict_similar(query, model)
+  suggestions = generate_alternatives(query, model, 5, 5)
   return render_template("output.html", suggestions=suggestions, query=query)
     
