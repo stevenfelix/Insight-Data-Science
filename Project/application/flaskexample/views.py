@@ -15,6 +15,6 @@ def query_input():
 @app.route('/output')
 def query_output():
   query = request.args.get('query')
-  suggestions = generate_alternatives(query, model, 5, 10)
+  suggestions = generate_alternatives(query, 5, model)
   return render_template("output.html", suggestions=suggestions, query=query)
     
